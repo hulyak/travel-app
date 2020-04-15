@@ -3,7 +3,6 @@ projectData = {};
 
 // Require Express to run server and routes
 const express = require('express');
-const morgan = require('morgan');
 // Start up an instance of app
 const app = express();
 const port = process.env.PORT || 3000;
