@@ -67,7 +67,7 @@
             </li>
             <li>
                 <img src="../media/resort2.jpg">
-                <!-- random image -->
+                 <!-- random image -->
                 <div class="caption left-align">
                     <h2>We Work With All Budgets</h2>
                     <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur
@@ -93,7 +93,7 @@
                 <div class="col s12">
                     <h3>Search Destinations</h3>
                     <div class="input-field">
-                        <form onsubmit="return handleSubmit(event)">
+                        <form onsubmit="return handleSubmit(event,date)">
                             <!-- <label for="city">City </label> -->
                             <input name="city" type="text" class="white grey-text autocomplete" id="autocomplete-input"
                                 placeholder="Aruba, Cancun, etc..." required>
@@ -103,7 +103,7 @@
                             <input type="date" id="date" placeholder="mm/dd/yyyy">
                             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                                 <i class="material-icons right" onclick="return Client.handleSubmit(event)"
-                                    onsubmit="return Client.handleSubmit(event)">send</i>
+                                    onsubmit="return Client.handleSubmit(event, date)">send</i>
                             </button>
 
 
@@ -113,6 +113,8 @@
             </div>
         </div>
     </section>
+
+
 
 
 

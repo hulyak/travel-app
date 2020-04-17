@@ -1,9 +1,7 @@
 import {
     handleSubmit
-} from './js/formHandler'
-import {
-    checkForUrl
-} from './js/checkForUrl'
+} from './js/formHandler';
+
 
 console.log(checkForUrl);
 //Import the sass files into index.js
@@ -13,7 +11,10 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 
+import resort1 from './media/resort1.jpg';
+import resort2 from './media/resort2.jpg';
+import resort3 from './media/resort3.jpg';
 export {
     handleSubmit,
-    checkForUrl
+    // checkForUrl
 }
