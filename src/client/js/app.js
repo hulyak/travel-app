@@ -1,18 +1,17 @@
 /* Global Variables */
-const zip = document.getElementById('zip');
-const feelings = document.getElementById('feelings');
+
 const button = document.getElementById('generate');
 
-const date = document.getElementById('date');
+const city = document.getElementById('city');
 const temp = document.getElementById('temp');
 const content = document.getElementById('content');
 // Base URL and API Key for weatherBit API
 const weatherbitApi = '04fa6da2d39e4f31b3d25b6d75ad1c84';
 const baseURL = 'http://api.weatherbit.io/v2.0/current';
 
-http://api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=demo
-// Create a new date instance dynamically with JS
-let d = new Date();
+http: //api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=demo
+    // Create a new date instance dynamically with JS
+    let d = new Date();
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 
 // Async GET
