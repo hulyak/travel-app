@@ -41,7 +41,7 @@
             <input type="date" class="form-control select-date" id="enddate" placeholder="mm/dd/yyyy" required> 
         </div>
         <div class="input-grp">
-            <input type="button" value="Submit" class="btn btn-primary flight" onclick="return Client.handleSubmit(event)"
+            <input id="button" type="button" value="Submit" class="btn btn-primary flight" onclick="return Client.handleSubmit(event)"
             onsubmit="return Client.handleSubmit(event)>
         <span id="error-text" class="error"></span>
         </div>
@@ -52,7 +52,7 @@
     My Trips
 </div>
 
-<div id="trips" class="my-trips"></div>
+<div id="trips" class="trips"></div>
 <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
