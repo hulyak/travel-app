@@ -2,12 +2,8 @@
 <html>
 
 <head>
-    <!--Import Google Icon Font-->
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traveler</title>
-    <link rel="stylesheet" href="../styles/trip.scss">
-    <link rel="stylesheet" href="../styles/base.scss">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 
@@ -21,13 +17,6 @@
         <h1>Planing Trip To Anywhere in The World?</h1>
    </div>
     <div class="booking-form-box">
-        <div class="radio-btn">
-           <input checked type="radio" class="btn" name="check"><span>Roundtrip</span>
-           <input type="radio" class="btn" name="check"><span>One Way</span>
-           <input type="radio" class="btn" name="check"><span>Multi-city</span>
-        
-        </div>
-
         <div class="booking-form">
             <label>Flying To</label>
             <input type="text" class="form-control" placeholder="New York, Paris, etc...">
@@ -40,8 +29,7 @@
             <input type="date" class="form-control select-date" id="enddate" placeholder="mm/dd/yyyy" required> 
         </div>
         <div class="input-grp">
-            <input id="button" type="button" value="Submit" class="btn btn-primary flight" onclick="return Client.handleSubmit(event)"
-            onsubmit="return Client.handleSubmit(event)>
+            <button id="button" type="button" value="Submit">Search</button>
         <span id="error-text" class="error"></span>
         </div>
     </div>
