@@ -3,135 +3,57 @@
 
 <head>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="../styles/form.scss">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
-        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous">
-    </script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travelville</title>
+    <title>Traveler</title>
+    <link rel="stylesheet" href="../styles/trip.scss">
+    <link rel="stylesheet" href="../styles/base.scss">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
 </head>
 
-<body id="home" class="scrollspy">
-    <!-- Navbar -->
-    <div class="navbar-fixed">
-        <nav class="teal">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Travelville</a>
-                    <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                        <i class="material-icons">menu</i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <a href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a href="#search">Search</a>
-                        </li>
-
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <ul class="sidenav" id="mobile-nav">
-        <li>
-            <a href="#home">Home</a>
-        </li>
-        <li>
-            <a href="#search">Search</a>
-
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-    </ul>
-
-    <!-- Section: Slider -->
-    <section class="slider">
-        <ul class="slides">
-            <li>
-                <img src="../media/resort1.jpg">
-                <!-- random image -->
-                <div class="caption center-align">
-                    <h2>Take Your Dream Vacation</h2>
-                    <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Quidem, provident eos dicta unde debitis</h5>
-                </div>
-            </li>
-            <li>
-                <img src="../media/resort2.jpg">
-                 <!-- random image -->
-                <div class="caption left-align">
-                    <h2>We Work With All Budgets</h2>
-                    <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Possimus delectus inventore neque impedit</h5>
-                </div>
-            </li>
-            <li>
-                <img src="../media/resort3.jpg">
-                <!-- random image -->
-                <div class="caption right-align">
-                    <h2>Group & Individual Getaways</h2>
-                    <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Sunt ipsum molestias excepturi doloremque</h5>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <!-- Section: Search -->
-    <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h3>Search Destinations</h3>
-                    <div class="input-field">
-                        <form onsubmit="return handleSubmit(event,date)">
-                            <!-- <label for="city">City </label> -->
-                            <input name="city" type="text" class="white grey-text autocomplete" id="autocomplete-input"
-                                placeholder="Aruba, Cancun, etc..." required>
-                            <!-- <label for="destination">To</label>
-                            <input type="text" id="destination"> -->
-                            <!-- <label for="date">Date</label> -->
-                            <input type="date" id="date" placeholder="mm/dd/yyyy">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                <i class="material-icons right" onclick="return Client.handleSubmit(event)"
-                                    onsubmit="return Client.handleSubmit(event, date)">send</i>
-                            </button>
-
-
-                        </form>
-                    </div>
-                </div>
-            </div>
+<body>
+    <nav>
+        <a href="#" class="logo">Traveler<em>.</em></a>
+    </nav>
+    <div class="header">
+        <h1>Planing Trip To Anywhere in The World?</h1>
+   </div>
+    <div class="booking-form-box">
+        <div class="radio-btn">
+           <input checked type="radio" class="btn" name="check"><span>Roundtrip</span>
+           <input type="radio" class="btn" name="check"><span>One Way</span>
+           <input type="radio" class="btn" name="check"><span>Multi-city</span>
+            <input name="check" type="radio" id="city" class="btn"
+            placeholder="New York, Paris, etc..." required><span>Search for a trip!</span>
         </div>
-    </section>
 
+        <div class="booking-form">
+            <label>Flying To</label>
+            <input type="text" class="form-control" placeholder="New York, Paris, etc...">
+        <div class="input-grp">
+            <label>Depart Date</label>
+            <input type="date" class="form-control select-date" placeholder="mm/dd/yyyy">
+        </div>
+        <div class="input-grp">
+            <label for="enddate">Return Date</label>
+            <input type="date" class="form-control select-date" id="enddate" placeholder="mm/dd/yyyy" required> 
+        </div>
+        <div class="input-grp">
+            <input type="button" value="Submit" class="btn btn-primary flight" onclick="return Client.handleSubmit(event)"
+            onsubmit="return Client.handleSubmit(event)>
+        <span id="error-text" class="error"></span>
+        </div>
+    </div>
+    </div>
+    
+<div id="my-trips">
+    My Trips
+</div>
 
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="section teal darken-2 white-text center">
-        <p class="flow-text">Travelville &copy; 2018 </p>
-    </footer>
-
-    <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-    <script>
+<div id="trips" class="my-trips"></div>
+<script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant
@@ -139,28 +61,6 @@
                 navigator.serviceWorker.register('/service-worker.js');
             });
         }
-    </script>
-    <script>
-        // Sidenav
-        const sideNav = document.querySelector('.sidenav');
-        M.Sidenav.init(sideNav, {});
-
-        // Slider
-        const slider = document.querySelector('.slider');
-        M.Slider.init(slider, {
-            indicators: false,
-            height: 500,
-            transition: 500,
-            interval: 6000
-        });
-
-        // Material Boxed
-        const mb = document.querySelectorAll('.materialboxed');
-        M.Materialbox.init(mb, {});
-
-        // ScrollSpy
-        const ss = document.querySelectorAll('.scrollspy');
-        M.ScrollSpy.init(ss, {});
     </script>
 </body>
 
