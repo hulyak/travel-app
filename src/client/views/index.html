@@ -4,43 +4,48 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traveler</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'
+        integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 
 </head>
 
 <body>
-    <nav>
-        <a href="#" class="logo">Traveler<em>.</em></a>
-    </nav>
-    <div class="header">
-        <h1>Planing Trip To Anywhere in The World?</h1>
-   </div>
-    <div class="booking-form-box">
-        <div class="booking-form">
-            <label for="city">Flying To</label>
-            <input id="city" type="text" class="form-control" placeholder="New York, Paris, etc...">
-        <div class="input-grp">
-            <label>Depart Date</label>
-            <input type="date" class="form-control select-date" placeholder="mm/dd/yyyy">
-        </div>
-        <div class="input-grp">
-            <label for="enddate">Return Date</label>
-            <input type="date" class="form-control select-date" id="enddate" placeholder="mm/dd/yyyy" required> 
-        </div>
-        <div class="input-grp">
-            <button id="button" type="button" value="Submit">Search</button>
-        <span id="error-text" class="error"></span>
-        </div>
-    </div>
-    </div>
-    
-<div id="my-trips">
-    My Trips
-</div>
+    <div class="cover">
 
-<div id="trips" class="trips"></div>
-<script>
+
+        <form class="flex-form">
+
+            <input id="city" type="search" placeholder="Where do you want to go?">
+
+            <label for="start-date">From</label>
+            <input id="start-date" type="date" name="from">
+
+            <label for="end-date">To</label>
+            <input id="end-date" type="date" name="to">
+
+            <select name="" id="">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guest</option>
+                <option value="3">3 Guest</option>
+                <option value="4">4 Guest</option>
+                <option value="5">5 Guest</option>
+            </select>
+
+            <input id="save-button" type="submit" value="Search">
+
+        </form>
+
+    </div>
+    <img src="../media/resort3.jpg" class="img">
+    <span id="error-text" class="error"></span>
+
+    <div id="my-trips">
+        My Trips
+    </div>
+
+    <div id="trips" class="trips"></div>
+
+    <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant

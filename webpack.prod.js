@@ -21,6 +21,39 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8000,
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.(png|jp(e*)g|svg|webp)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8000,
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
+                options: {
+                    attributes: {
+                        list: [{
+                            tag: 'img',
+                            attribute: 'src',
+                            type: 'src',
+                        }],
+                    }
+                },
             }
         ]
     },

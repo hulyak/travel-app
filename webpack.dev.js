@@ -16,7 +16,8 @@ module.exports = {
     },
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+        // path: path.resolve(__dirname, 'dist');
     },
     module: {
         rules: [{
@@ -27,8 +28,42 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.(png|jp(e*)g|svg|webp)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
+                options: {
+                    attributes: {
+                        list: [{
+                            tag: 'img',
+                            attribute: 'src',
+                            type: 'src',
+                        }],
+                    }
+                },
             }
         ]
+
     },
     plugins: [
         new HtmlWebPackPlugin({
