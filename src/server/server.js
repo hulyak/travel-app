@@ -38,7 +38,7 @@ const GEONAMES_USERNAME = "hulya";
 const GEONAMES_URL = '&maxRows=10&username=';
 
 //https://api.weatherbit.io/v2.0/current?&lat=38.123&lon=-78.543&key=04fa6da2d39e4f31b3d25b6d75ad1c84
-const WEATHERBIT_BASE_URL = "/https://api.weatherbit.io/v2.0/forecast/daily?";
+const WEATHERBIT_BASE_URL = "https://api.weatherbit.io/v2.0/forecast/daily?";
 const WEATHERBIT_API_KEY = "04fa6da2d39e4f31b3d25b6d75ad1c84";
 
 //https: //pixabay.com/api/?Paris&key=16060501-e2d3132e99ce2be48e2344f5f&image_type=photo&pretty=true&category=places
@@ -99,7 +99,8 @@ const getPixabayImages = async (cityName = '') => {
 // Respond with JS array when a GET request is made to the homepage
 app.get('/', (req, res) => {
     // response.send(projectData);
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    // res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile("index.html");
 });
 
 app.get('/', function (req, res) {
