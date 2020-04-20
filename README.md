@@ -58,7 +58,7 @@ This project builds out a travel app that obtains a desired trip location & depa
 
 
 ## Offline Functionality
-The project have service workers set up in webpack.
+The project has service workers set up in webpack.
 
 ## Testing
 The project has Jest installed and can be run using `npm run test`
