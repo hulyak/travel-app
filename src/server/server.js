@@ -128,11 +128,11 @@ app.post('/fetchInfo', (req, res) => {
         endDate,
         dateInUnix
     };
-    fetchCityCoordinates(city).then(coordinates => {
+    fetchLatLong(city).then(coordinates => {
         trip_info["latitude"] = coordinates.latitude;
         trip_info["longitude"] = coordinates.longitude;
 
-        fetchWeatherData(
+        getWeather(
             coordinates.latitude,
             coordinates.longitude,
             dateInUnix
@@ -141,7 +141,7 @@ app.post('/fetchInfo', (req, res) => {
             trip_info["temp"] = forecast.temp;
             trip_info["timeZone"] = forecast.timeZone;
 
-            fetchCityImage(city).then(imageInfo => {
+            getPixabayImages(city).then(imageInfo => {
                 trip_info["cityImageUrl"] = imageInfo.imageUrl;
 
                 projectData.push(trip_info);
