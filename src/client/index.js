@@ -9,7 +9,7 @@ import item from './js/todo';
 import check from './js/todo';
 import './views/index.html';
 
-import sky from './media/sky.jpg';
+// import sky from './media/sky.jpg';
 
 import { calculateTime } from "./js/calculateTime";
 import { formSubmitHandler } from "./js/index";

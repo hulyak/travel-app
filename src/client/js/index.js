@@ -2,7 +2,7 @@ const {calculateTime} = require('./calculateTime');
 const {createTrip} = require('./createTrip');
 
 //UI Elements
-const submit = document.querySelector('#save-button');
+const saveBtn = document.querySelector('#save-button');
 const destination = document.getElementById("city");
 const startDate = document.getElementById("start-date");
 const endDate = document.getElementById("end-date");
@@ -63,4 +63,5 @@ const formSubmitHandler = () => {
 	});
 }
 
+// saveBtn("click", formSubmitHandler);
 module.exports = { formSubmitHandler};

@@ -12,7 +12,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     overflow: hidden;
-    background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+    background-image: url('../media/sky.jpg');
 }
 
 a {
@@ -25,14 +25,14 @@ a {
 }
 
 
-.img {
-    height: 100%;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-    position: absolute;
-    top: 0;
-    z-index: -1;
-}
+// .img {
+//     height: 100%;
+//     -webkit-filter: blur(5px);
+//     filter: blur(5px);
+//     position: absolute;
+//     top: 0;
+//     z-index: -1;
+// }
 
 .flex-form>*:not([type="date"]) {
     border-top: 1px solid white;
@@ -61,8 +61,8 @@ a {
     border: 0;
     padding: 10px;
     background: white;
-    line-height: 2.0em;
-    font-size: 20px;
+    line-height: 1.8em;
+    font-size: 14px;
     border-radius: 0;
     outline: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
