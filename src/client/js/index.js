@@ -36,7 +36,10 @@ const formSubmitHandler = () => {
 	const dateInUnix = new Date(start_date).getTime() / 1000;
 
 	const diff = calculateTime(start_date, end_date);
-	if (diff === "error") {
+	if (city == '' || date == ''){
+		alert('Please enter a valid city and date!')
+	}
+	else if (diff === "error") {
 		errorText.setAttribute("display", "block");
 		errorText.textContent = "Check the dates";
 		return;

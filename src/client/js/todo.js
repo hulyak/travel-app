@@ -12,26 +12,26 @@ var todosEX = window.localStorage.getItem("todos");
 var todos = JSON.parse(todosEX);
 
 
-class item{
+export class item{
 	constructor(name){
 		this.createItem(name);
 	}
     createItem(name){
-    	var itemBox = document.createElement('div');
+    	const itemBox = document.createElement('div');
         itemBox.classList.add('item');
 
-    	var input = document.createElement('input');
+    	const input = document.createElement('input');
     	input.type = "text";
     	input.disabled = true;
     	input.value = name;
     	input.classList.add('item_input');
 
-    	var edit = document.createElement('button');
+    	const edit = document.createElement('button');
     	edit.classList.add('edit');
     	edit.innerHTML = "EDIT";
     	edit.addEventListener('click', () => this.edit(input, name));
 
-    	var remove = document.createElement('button');
+    	const remove = document.createElement('button');
     	remove.classList.add('remove');
     	remove.innerHTML = "REMOVE";
     	remove.addEventListener('click', () => this.remove(itemBox, name));
@@ -71,7 +71,7 @@ window.addEventListener('keydown', (e) => {
 	}
 })
 
-function check(){
+export function check(){
 	if(inputValue.value != ""){
 		new item(inputValue.value);
         todos.push(inputValue.value);

@@ -151,7 +151,7 @@ app.post('/fetchInfo', (req, res) => {
     });
 });
 
-app.post('/featchWether', (req, res) => {
+app.post('/fetchWeather', (req, res) => {
     const queryUrl = req.body.queryUrl;
     request({
         url: queryUrl
