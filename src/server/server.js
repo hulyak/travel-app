@@ -51,7 +51,7 @@ const fetchLatLong = async (cityName = '') => {
     const queryUrl = `${GEONAMES_BASE_URL}${cityName}${GEONAMES_URL}${GEONAMES_USERNAME}`;
     const request = await fetch(queryUrl);
     try {
-        const data = await response.json();
+        const data = await request.json();
         const coordinates = {
             longitude: data.geonames[0].lng,
             latitude: data.geonmaes[0].lat
@@ -62,8 +62,8 @@ const fetchLatLong = async (cityName = '') => {
     }
 };
 //FETCH data from weather api
-const getWeather = async (lat = '', lon = '', date = '') => {
-    const queryUrl = `${WEATHERBIT_BASE_URL}${WEATHERBIT_API_KEY}&lat=${data.lat}&lot=${data.lon}&datetime=${data.date}`;
+const getWeather = async (lat = '', lon = '', datetime = '') => {
+    const queryUrl = `${WEATHERBIT_BASE_URL}${WEATHERBIT_API_KEY}&lat=${data.lat}&lot=${data.lon}&datetime=${data.datetime}`;
     const request = await fetch(queryUrl);
     try {
         const data = await request.json();
@@ -73,7 +73,7 @@ const getWeather = async (lat = '', lon = '', date = '') => {
             temp: data.data[0].temp,
             timeZone: data.data[0].timezone
         }
-        return data;
+        return forecast;
     } catch (error) {
         console.log(error);
     }
@@ -83,7 +83,7 @@ const getPixabayImages = async (cityName = '') => {
     const queryUrl = `${PIXABAY_BASE_URL}${PIXABAY_API_KEY}${PIXABAY_URL}${cityName}`;
     const request = await fetch(queryUrl);
     try {
-        const data = await response.json();
+        const data = await request.json();
         const imageInfo = {
             imageURL: data.hits[0].webformatURL,
             width: data.hits[0].webformatWidth,
