@@ -155,7 +155,7 @@ app.post('/fetchWeather', (req, res) => {
     const queryUrl = req.body.queryUrl;
     request({
         url: queryUrl
-    }, (errror, error, response, body) => {
+    }, (error, response, body) => {
         if (error || response.statusCode !== 200) {
             return res.status(500).json({
                 type: "error",
