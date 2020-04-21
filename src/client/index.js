@@ -6,7 +6,7 @@ import './styles/todo.scss';
 
 // import './js/todo.js';
 import item from './js/todo';
-import check from '.js/todo';
+import check from './js/todo';
 import './views/index.html';
 
 import sky from './media/sky.jpg';
