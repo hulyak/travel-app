@@ -62,8 +62,8 @@ const fetchLatLong = async (cityName = '') => {
     }
 };
 //FETCH data from weather api
-const getWeather = async (lat = '', lon = '', datetime = '') => {
-    const queryUrl = `${WEATHERBIT_BASE_URL}${WEATHERBIT_API_KEY}&lat=${data.lat}&lot=${data.lon}datetime=${data.datetime}`;
+const getWeather = async (lat = '', lon = '', date = '') => {
+    const queryUrl = `${WEATHERBIT_BASE_URL}${WEATHERBIT_API_KEY}&lat=${data.lat}&lot=${data.lon}&datetime=${data.date}`;
     const request = await fetch(queryUrl);
     try {
         const data = await request.json();

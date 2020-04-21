@@ -59,7 +59,7 @@ const formSubmitHandler = () => {
 			data.cityImageUrl
 		);
 		myTripsContainer.appendChild(tripContainer);
-		submit.textContent = "Save trip";
+		saveBtn.textContent = "Save trip";
 	});
 }
 

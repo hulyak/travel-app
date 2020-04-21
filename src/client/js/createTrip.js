@@ -15,10 +15,13 @@ const createTrip = (
     const startDateContainer = createContainer("start-date-container", "Departure date: ", start_date);
     tripContainer.appendChild(startDateContainer);
     //end-date container
-    const endDateContainer = createContainer("end-date-container" , "Duration : ", duration + "days away");
+    const endDateContainer = createContainer("end-date-container" , "Return Date: ", end_date);
     tripContainer.appendChild(endDateContainer);
     //duration-container
-    const durationContainer = createContainer("weather-info-container", "weather information", `${weather_summary} <br/> Temperature:${temp}${String.fromCharCode(176)}C`);
+    const durationContainer = createContainer("duration-container","Duration : ", duration + " days away");
+    tripContainer.appendChild(durationContainer);
+    //weatherInfo container
+    const weatherInfoContainer = createContainer("weather-info-container","Weather will be like ", `${weather_summary} <br/> Temperature:${temp}${String.fromCharCode(176)}C`);
     tripContainer.appendChild(weatherInfoContainer);
     return tripContainer;
  };
