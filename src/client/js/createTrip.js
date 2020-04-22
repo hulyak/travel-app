@@ -1,4 +1,4 @@
-const createTrip = (
+const createTrip = async  (
     city, start_date, end_date, duration, weather, temp, imageUrl
  ) => {
      //create container

@@ -7,16 +7,17 @@ import './styles/todo.scss';
 // import './js/todo.js';
 import item from './js/todo';
 import check from './js/todo';
-import './views/index.html';
+// import './views/index.html';
 
 // import sky from './media/sky.jpg';
 
 import { calculateTime } from "./js/calculateTime";
 import { formSubmitHandler } from "./js/index";
 
-const saveBtn = document.getElementById("save-button");
+window.addEventListener('DomContentLoaded', formSubmitHandler);
+// const saveBtn = document.getElementById("save-button");
 
-saveBtn.addEventListener("click", formSubmitHandler);
+// saveBtn.addEventListener("click", formSubmitHandler);
 
 document.querySelector("#reset").addEventListener('click', () => {
     document.querySelector("#trips").style.display ='none'
