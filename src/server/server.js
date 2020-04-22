@@ -83,7 +83,6 @@ app.post('/trips', async (req, res) => {
         },
         ...createTrip];
         res.send({success:true});
-    ]
 });
         // getWeather(
         //     coordinates.latitude,
