@@ -4,17 +4,13 @@ import './styles/base.scss';
 import './styles/form.scss';
 import './styles/todo.scss';
 
-// import './js/todo.js';
-import item from './js/todo';
-import check from './js/todo';
-// import './views/index.html';
-
-// import sky from './media/sky.jpg';
+import {item} from './js/todo';
+import {check} from './js/todo';
 
 import { calculateTime } from "./js/calculateTime";
 import { formSubmitHandler } from "./js/index";
 
-window.addEventListener('DomContentLoaded', formSubmitHandler);
+window.addEventListener('DOMContentLoaded', formSubmitHandler);
 
 document.querySelector("#reset").addEventListener('click', () => {
     document.querySelector("#trips").style.display ='none'

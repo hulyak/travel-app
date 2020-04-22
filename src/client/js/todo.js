@@ -71,7 +71,7 @@ window.addEventListener('keydown', (e) => {
 	}
 })
 
-export function check(){
+function check(){
 	if(inputValue.value != ""){
 		new item(inputValue.value);
         todos.push(inputValue.value);
@@ -87,3 +87,5 @@ for (let v = 0 ; v < todos.length ; v++){
 
 
 new item("buy tickets");
+
+module.exports = {check};
