@@ -167,4 +167,3 @@ const getPixabayImages = async (key, image) => {
     }
 };
 
-module.exports = server;
