@@ -21,7 +21,7 @@ const createTrip = async  (
     const durationContainer = createContainer("duration-container","Duration : ", duration + " days away");
     tripContainer.appendChild(durationContainer);
     //weatherInfo container
-    const weatherInfoContainer = createContainer("weather-info-container","Weather will be like ", `${weather_summary} <br/> Temperature:${temp}${String.fromCharCode(176)}C`);
+    const weatherInfoContainer = createContainer("weather-info-container","Weather will be like ", `${weather} <br/> Temperature:${temp}${String.fromCharCode(176)}C`);
     tripContainer.appendChild(weatherInfoContainer);
     return tripContainer;
  };

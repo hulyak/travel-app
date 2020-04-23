@@ -67,9 +67,9 @@ app.post('/trips', async (req, res) => {
     //     trip_info["latitude"] = coordinates.latitude;
     //     trip_info["longitude"] = coordinates.longitude;
     const image = await getPixabayImages(process.env.PIXABAY_API_KEY, city);
-    let weatherInfo = {};
+    let getWeatherData = {};
     if(coord){
-        getWeatherData = await getWeather(process.env.WEATHER_BIT_API_KEY, coord.lat ,coord.lng, datetime);
+        getWeatherData = await getWeather(process.env.WEATHER_BIT_API_KEY, coord.lat ,coord.lng, date);
     }
     createTrip = [
         {
@@ -79,7 +79,6 @@ app.post('/trips', async (req, res) => {
             image:cityImageUrl,
             temp:temp,
             weather:weather,
-            timeZone:timeZone
         },
         ...createTrip];
         res.send({success:true});
@@ -143,8 +142,7 @@ const getWeather = async (lat, lon, datetime, key) => {
         console.log(data);
         const forecast = {
             weather: data.data[0].weather.description,
-            temp: data.data[0].temp,
-            timeZone: data.data[0].timezone
+            temp: data.data[0].temp
         }
         return forecast;
     } catch (error) {
