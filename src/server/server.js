@@ -103,21 +103,21 @@ app.post('/trips', async (req, res) => {
 //     });
 // });
 
-// app.post('/fetchWeather', (req, res) => {
-//     const queryUrl = req.body.queryUrl;
-//     request({
-//         url: queryUrl
-//     }, (error, response, body) => {
-//         if (error || response.statusCode !== 200) {
-//             return res.status(500).json({
-//                 type: "error",
-//                 message: err.message
-//             });
-//         }
+app.post('/fetchWeather', (req, res) => {
+    const queryUrl = req.body.queryUrl;
+    request({
+        url: queryUrl
+    }, (error, response, body) => {
+        if (error || response.statusCode !== 200) {
+            return res.status(500).json({
+                type: "error",
+                message: err.message
+            });
+        }
 
-//         res.json(JSON.parse(body));
-//     });
-// });
+        res.json(JSON.parse(body));
+    });
+});
 
 //Fetch latitude/longitude From GEONAMES API
 const fetchLatLong = async (cityName , username) => {
