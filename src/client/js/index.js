@@ -46,6 +46,7 @@ let formSubmitHandler = async (event) => {
 		else if (diff === "error") {
 			errorText.setAttribute("display", "block");
 			errorText.textContent = "Check the dates";
+			alert("Check the dates");
 			return;
 		}
 		errorText.textContent = "";

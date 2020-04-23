@@ -66,6 +66,7 @@ a {
     border-bottom: 1px solid #FF5A5F;
     color: white;
 }
+
 .form {
     z-index: 10;
     position: relative;
@@ -104,6 +105,9 @@ input[type="search"] {
     flex-basis: 25%;
 }
 
+input[type="submit"]{
+    flex-basis: 10%;
+}
 input[type="reset"] {
     flex-basis: 10%;
 }
