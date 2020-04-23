@@ -52,20 +52,22 @@ let formSubmitHandler = async (event) => {
 		errorText.setAttribute("display", "none");
 
 		try {
-			await sendRequestToServer(city, start_date, end_date, dateInUnix).then(data => {
-				const tripContainer = createTrip(
-					data.city,
-					data.startDate,
-					data.endDate,
-					diff,
-					data.weather,
-					data.temp,
-					data.timezone,
-					data.cityImageUrl
-				);
-				myTripsContainer.appendChild(tripContainer);
-				saveBtn.textContent = "Save trip";
-			});
+			// await sendRequestToServer(city, start_date, end_date, dateInUnix).then(data => {
+			// 	const tripContainer = createTrip(
+			// 		data.city,
+			// 		data.startDate,
+			// 		data.endDate,
+			// 		diff,
+			// 		data.weather,
+			// 		data.temp,
+			// 		data.timezone,
+			// 		data.cityImageUrl
+			// 	);
+			// 	myTripsContainer.appendChild(tripContainer);
+			// 	saveBtn.textContent = "Save trip";
+			// });
+			await sendRequestToServer("http://localhost:3000/trips", {destination, start_date, end_date,dateInUnix});
+			await createTrip();
 		}
 		catch(e) {
 			document.querySelector('#trips').innerText = "Please try again!";
