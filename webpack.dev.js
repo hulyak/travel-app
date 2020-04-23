@@ -16,8 +16,7 @@ module.exports = {
     },
     output: {
         libraryTarget: 'var',
-        library: 'Client',
-        // path: path.resolve(__dirname, 'dist');
+        library: 'Client'
     },
     module: {
         rules: [{
@@ -30,16 +29,6 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        limit: 8000, // Convert images < 8kb to base64 strings
-                        name: 'images/[hash]-[name].[ext]'
-                    }
-                }]
-            },
-            {
                 test: /\.(png|jp(e*)g|svg|webp)$/,
                 use: [{
                     loader: 'url-loader',
@@ -49,19 +38,6 @@ module.exports = {
                     }
                 }]
             },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    attributes: {
-                        list: [{
-                            tag: 'img',
-                            attribute: 'src',
-                            type: 'src',
-                        }],
-                    }
-                },
-            }
         ]
 
     },

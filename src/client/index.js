@@ -3,14 +3,19 @@ import './styles/resets.scss';
 import './styles/base.scss';
 import './styles/form.scss';
 
+import notrip from './media/notrip.jpeg'
+import { onCreate } from './js/formvalidator'
+import { onBlurInput } from './js/createButton'
+import { onInputFocus } from './js/createButton';
+import { updateInterface } from './js/updateDataOnPage'; 
 
-import { calculateTime } from "./js/calculateTime";
-import { formSubmitHandler } from "./js/index";
+export
+{
+    onCreate,
+    onBlurInput,
+    onInputFocus,
+    updateInterface
+}
 
-window.addEventListener('DOMContentLoaded', formSubmitHandler);
-
-document.querySelector("#reset").addEventListener('click', () => {
-    document.querySelector("#trips").style.display ='none'
-;})
-
-export * from "./js/index";
+const notripimg=document.getElementById('notripi');
+notripimg.src=notrip;

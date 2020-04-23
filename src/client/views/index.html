@@ -10,28 +10,37 @@
     <div class="cover">
         <form class="form">
 
-            <input id="city" type="search" placeholder="Where do you want to go?">
+            <input id="city" type="text" placeholder="Where do you want to go?" onfocus="Client.onInputFocus(this,'city')" onBlur="Client.onBlurInput(this,'city')">
+            <label class="error"></label>
 
-            <label for="start-date">From</label>
-            <input id="start-date" type="date" name="from">
+            <label for="start-date">Date</label>
+            <input id="start-date" type="date" name="Date"  onfocus="Client.onInputFocus(this,'start-date')" onBlur="Client.onBlurInput(this,'start-date')">
+            <label class="error"></label>
 
-            <label for="end-date">To</label>
-            <input id="end-date" type="date" name="to">
-
-            <input id="save-button" type="submit" value="Search">
+            <input id="submit" type="submit" value="Create Trip">
             <input id="reset" type="reset" value="Reset">
            </form>
 
     </div>
-    <!-- <img src="../media/sky.jpg" class="img"> -->
-    <span id="error-text" class="error"></span>
+    <span id="nameerror" class="error"></span>
+    <span id="dateerror" class="error"></span>
 <!-- List trips -->
-    <div id="my-trips">
-        My Trips
+<section>
+    <div class="trip">
+        <div class="notrip">
+            <img id='notripi' alt="no trip image">
+            <h3>Create your trips!</h3>
+            </div>
+        <div class="trip-data">
+            <img id="mainimage">
+            <h2 id="cityname"></h2>
+            <h4 id="dateoftravel"></h4>
+            <p id='min-temp'></p>
+            <p id='max-temp'></p>
+            <p id='desc'></p>   
+        </div>
     </div>
-    <div id="trips" class="trips"></div>
-   
-
+</section>
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {

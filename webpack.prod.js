@@ -23,16 +23,6 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        limit: 8000,
-                        name: 'images/[hash]-[name].[ext]'
-                    }
-                }]
-            },
-            {
                 test: /\.(png|jp(e*)g|svg|webp)$/,
                 use: [{
                     loader: 'url-loader',
@@ -42,19 +32,6 @@ module.exports = {
                     }
                 }]
             },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    attributes: {
-                        list: [{
-                            tag: 'img',
-                            attribute: 'src',
-                            type: 'src',
-                        }],
-                    }
-                },
-            }
         ]
     },
     plugins: [
@@ -62,9 +39,7 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({
-            filename: '[name].css'
-        }),
+        new MiniCssExtractPlugin(),
         new WorkboxPlugin.GenerateSW()
     ]
 }

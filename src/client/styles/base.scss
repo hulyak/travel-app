@@ -38,16 +38,6 @@ a {
     width: 100%;
 }
 
-
-// .img {
-//     height: 100%;
-//     -webkit-filter: blur(5px);
-//     filter: blur(5px);
-//     position: absolute;
-//     top: 0;
-//     z-index: -1;
-// }
-
 .form>*:not([type="date"]) {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -101,7 +91,7 @@ a {
     display: flex;
 }
 
-input[type="search"] {
+input[type="text"] {
     flex-basis: 25%;
 }
 
@@ -110,4 +100,53 @@ input[type="submit"]{
 }
 input[type="reset"] {
     flex-basis: 10%;
+}
+
+.error
+{
+    position: relative;
+    color: red;
+    box-sizing: border-box;
+    top: -1rem;
+    left: 1.5rem;
+}
+
+#mainimage
+{
+    display: none;
+    width: 50%;
+    margin: auto auto;
+    height: 200px;
+    border: 2px solid blue;
+}
+#cityname
+{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+#dateoftravel
+{
+    text-align: center;
+}
+#min-temp
+{
+    text-align: center;
+}
+#max-temp
+{
+    text-align: center;
+}
+#desc
+{
+    text-align: center;
+}
+
+.notrip
+{
+   display: block;
+   margin: auto auto;
+   text-align: center;
+   padding: 4rem;
 }
