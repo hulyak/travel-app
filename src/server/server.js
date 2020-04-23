@@ -51,56 +51,55 @@ app.get('/trips', function (req, res) {
 // POST method route
 app.post('/trips', async (req, res) => {
     console.log(req.body);
-    // const city = req.body.tripData.city;
-    // const startDate = req.body.tripData.start_date;
-    // const endDate = req.body.tripData.end_date;
-    // const dateInUnix = req.body.tripData.date;
-    const { city, startDate, endDate, dateInUnix} = req.body;
-    // const trip_info = {
-    //     city,
-    //     startDate,
-    //     endDate,
-    //     dateInUnix
-    // };
-    const coord = await fetchLatLong(process.env.GEONAMES_USERNAME, city);
-    // fetchLatLong(city).then(coordinates => {
-    //     trip_info["latitude"] = coordinates.latitude;
-    //     trip_info["longitude"] = coordinates.longitude;
-    const image = await getPixabayImages(process.env.PIXABAY_API_KEY, city);
-    let getWeatherData = {};
-    if(coord){
-        getWeatherData = await getWeather(process.env.WEATHER_BIT_API_KEY, coord.lat ,coord.lng, date);
-    }
-    createTrip = [
-        {
-            city:city,
-            start_date:startDate,
-            end_date:endDate,
-            image:cityImageUrl,
-            temp:temp,
-            weather:weather,
-        },
-        ...createTrip];
-        res.send({success:true});
-});
-        // getWeather(
-        //     coordinates.latitude,
-        //     coordinates.longitude,
-        //     dateInUnix
-        // ).then(forecast => {
-        //     trip_info["weather"] = forecast.weather;
-        //     trip_info["temp"] = forecast.temp;
-        //     trip_info["timeZone"] = forecast.timeZone;
-    
-            // getPixabayImages(city).then(imageInfo => {
-            //     trip_info["cityImageUrl"] = imageInfo.imageUrl;
-
-            //     projectData.push(trip_info);
-            //     res.json(trip_info);
-//             });
-//         });
-//     });
+    const city = req.body.tripData.city;
+    const startDate = req.body.tripData.start_date;
+    const endDate = req.body.tripData.end_date;
+    const dateInUnix = req.body.tripData.date;
+    // const { city, startDate, endDate, dateInUnix} = req.body;
+    const trip_info = {
+        city,
+        startDate,
+        endDate,
+        dateInUnix
+    };
+    // const coord = await fetchLatLong(process.env.GEONAMES_USERNAME, city);
+    fetchLatLong(city).then(coordinates => {
+        trip_info["latitude"] = coordinates.latitude;
+        trip_info["longitude"] = coordinates.longitude;
+    // const image = await getPixabayImages(process.env.PIXABAY_API_KEY, city);
+    // let getWeatherData = {};
+//     if(coord){
+//         getWeatherData = await getWeather(process.env.WEATHER_BIT_API_KEY, coord.lat ,coord.lng, date);
+//     }
+//     createTrip = [
+//         {
+//             city:city,
+//             start_date:startDate,
+//             end_date:endDate,
+//             image:cityImageUrl,
+//             temp:temp,
+//             weather:weather,
+//         },
+//         ...createTrip];
+//         res.send({success:true});
 // });
+        getWeather(
+            coordinates.latitude,
+            coordinates.longitude,
+            dateInUnix
+        ).then(forecast => {
+            trip_info["weather"] = forecast.weather;
+            trip_info["temp"] = forecast.temp;
+    
+            getPixabayImages(city).then(imageInfo => {
+                trip_info["cityImageUrl"] = imageInfo.imageUrl;
+
+                projectData.push(trip_info);
+                res.json(trip_info);
+            });
+        });
+    });
+});
 
 app.post('/fetchWeather', (req, res) => {
     const queryUrl = req.body.queryUrl;

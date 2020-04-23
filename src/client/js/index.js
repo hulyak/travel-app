@@ -12,7 +12,7 @@ const sendRequestToServer = async (city, start_date, end_date, date) => {
 
 	let response = await fetch("http://localhost:3000/trips" , {
 		method: 'POST',
-		mode : 'cors',
+		// mode : 'cors',
 		credentials: 'same-origin',
 		headers: {
 			'Content-Type': 'application/json'
@@ -53,22 +53,21 @@ let formSubmitHandler = async (event) => {
 		errorText.setAttribute("display", "none");
 
 		try {
-			// await sendRequestToServer(city, start_date, end_date, dateInUnix).then(data => {
-			// 	const tripContainer = createTrip(
-			// 		data.city,
-			// 		data.startDate,
-			// 		data.endDate,
-			// 		diff,
-			// 		data.weather,
-			// 		data.temp,
-			// 		data.timezone,
-			// 		data.cityImageUrl
-			// 	);
-			// 	myTripsContainer.appendChild(tripContainer);
-			// 	saveBtn.textContent = "Save trip";
-			// });
-			await sendRequestToServer("http://localhost:3000/trips", {destination, start_date, end_date,dateInUnix, diff});
-			await createTrip();
+			await sendRequestToServer(city, start_date, end_date, dateInUnix).then(data => {
+				const tripContainer = createTrip(
+					data.city,
+					data.startDate,
+					data.endDate,
+					diff,
+					data.weather,
+					data.temp,
+					data.cityImageUrl
+				);
+				myTripsContainer.appendChild(tripContainer);
+				saveBtn.textContent = "Save trip";
+			});
+			// await sendRequestToServer("http://localhost:3000/trips", {destination, start_date, end_date,dateInUnix, diff});
+			// await createTrip(city, startDate, endDate, diff, weather, temp, cityImageUrl);
 		}
 		catch(e) {
 			alert("Please try again!");
