@@ -2,9 +2,6 @@ const {calculateTime} = require('./calculateTime');
 const {createTrip} = require('./createTrip');
 
 //UI Elements
-const destination = document.getElementById("city");
-const startDate = document.getElementById("start-date");
-const endDate = document.getElementById("end-date");
 const errorText = document.getElementById("error-text");
 const myTripsContainer = document.getElementById("trips");
 //Post request to server
@@ -37,13 +34,13 @@ let formSubmitHandler = async (event) => {
 	const saveBtn = document.querySelector('#save-button');
 	saveBtn.addEventListener('click', async e => {
 		e.preventDefault();
-		const city = destination.value.trim();
-		const start_date = startDate.value;
-		const end_date = endDate.value;
+		const destination = document.getElementById("city").value.trim();
+		const start_date = document.getElementById("start-date").value;
+		const end_date =document.getElementById("end-date").value;
 		const dateInUnix = new Date(start_date).getTime() / 1000;
 		const diff = calculateTime(start_date, end_date);
 
-		if (city == '' || start_date == '' || end_date == ''){
+		if (destination == '' || start_date == '' || end_date == ''){
 			alert('Please enter a valid city and date!')
 		}
 		else if (diff === "error") {

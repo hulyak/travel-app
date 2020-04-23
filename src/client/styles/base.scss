@@ -48,7 +48,7 @@ a {
 //     z-index: -1;
 // }
 
-.flex-form>*:not([type="date"]) {
+.form>*:not([type="date"]) {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 }
@@ -101,7 +101,7 @@ a {
 }
 
 input[type="search"] {
-    flex-basis: 50%;
+    flex-basis: 25%;
 }
 
 input[type="reset"] {

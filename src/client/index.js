@@ -2,10 +2,7 @@
 import './styles/resets.scss';
 import './styles/base.scss';
 import './styles/form.scss';
-import './styles/todo.scss';
 
-import {item} from './js/todo';
-export * from './js/todo';
 
 import { calculateTime } from "./js/calculateTime";
 import { formSubmitHandler } from "./js/index";
