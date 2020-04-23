@@ -66,11 +66,11 @@ let formSubmitHandler = async (event) => {
 			// 	myTripsContainer.appendChild(tripContainer);
 			// 	saveBtn.textContent = "Save trip";
 			// });
-			await sendRequestToServer("http://localhost:3000/trips", {destination, start_date, end_date,dateInUnix});
+			await sendRequestToServer("http://localhost:3000/trips", {destination, start_date, end_date,dateInUnix, diff});
 			await createTrip();
 		}
 		catch(e) {
-			document.querySelector('#trips').innerText = "Please try again!";
+			alert("Please try again!");
 			console.log(e);
 		}
 	})
