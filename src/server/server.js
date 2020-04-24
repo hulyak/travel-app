@@ -26,11 +26,11 @@ app.get('/', function (req, res) {
 })
 
 
-const port=3003;
+const port=3000;
 const server=app.listen(port,startServer);
 function startServer()
 {
-    console.log("server is started: localhost:3003");
+    console.log("server is started: localhost:3000");
 }
 
 /*create routes for post request of weather data*/

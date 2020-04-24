@@ -1,5 +1,6 @@
-export function onCreate()
-{
+export function onCreate(e)
+{ 
+    e.preventDefault();
     const place=document.getElementById('city').value.trim();
     const date=document.getElementById('start-date').value;
     if(place=='')
@@ -21,7 +22,6 @@ export function onCreate()
     callGeoNameApi(place,date);
    }
 }
-
 
 function isDateValid(date1)
 {
