@@ -55,15 +55,15 @@ function callGeoNameApi(place,date)
         });
     });
 }
-const fetchLatLang=async (place,baseUrl,username)=>
+const fetchLatLang = async (place,baseUrl,username)=>
 {
     let coord={
         lang:'',
         lat:'',
     };
-    const response=await fetch(`${baseUrl}${place}&username=${username}`);
+    const response = await fetch(`${baseUrl}${place}&username=${username}`);
     try{
-    const data=await response.json();
+    const data = await response.json();
     coord['lng']=data['address']['lng'];
     coord['lat']=data['address']['lat'];
     return coord;}
@@ -95,23 +95,23 @@ const postDataToServer=async(baseUrl='',data={})=>
     }
 }
 
-const deleteTrip = async (baseUrl = '', index) =>{
-    let dlt = confirm(`Delete this trip?`);
-    if(dlt === false) return;
-    try {
-        await fetch(baseUrl, {
-            method:"DELETE",
-            mode:"cors",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify({id:index})
-        });
-        await updateUI();
-    }catch (e){
-        console.log(e);
-    }
-}
+// const deleteTrip = async (baseUrl = '', index) =>{
+//     let dlt = confirm(`Delete this trip?`);
+//     if(dlt === false) return;
+//     try {
+//         await fetch(baseUrl, {
+//             method:"DELETE",
+//             mode:"cors",
+//             headers:{
+//                 'Content-Type':'application/json'
+//             },
+//             body: JSON.stringify({id:index})
+//         });
+//         await updateUI();
+//     }catch (e){
+//         console.log(e);
+//     }
+// }
 //To fetch data from the weather api
 
 const getWeatherData=async(baseUrl,key,data,date)=>
@@ -168,4 +168,4 @@ const getPixaBayImages=async (url,key,getData)=>
 const submit=document.getElementById('submit');
 submit.addEventListener('click',onCreate);
 submit.addEventListener('onmousedown',onCreate);
-export {deleteTrip};
+// export {deleteTrip};
