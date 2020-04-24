@@ -1,22 +1,23 @@
+
 export function onCreate(e)
 { 
     e.preventDefault();
     const place=document.getElementById('city').value.trim();
-    const date=document.getElementById('start-date').value;
+    const date=document.getElementById('date').value;
     if(place=='')
     {
-        document.getElementById('city').style.cssText="border:1px solid red";
+        place.style.cssText="border:1px solid red";
         alert("Please enter a place name");
     }
     if(date.length === 0)
     {
-        document.getElementById('start-date').style.cssText="border:1px solid red";
+        date.style.cssText="border:1px solid red";
         alert("Please enter a date");
     }
-   if(! isDateValid(date))
+    if(! isDateValid(date))
    {
-    document.getElementById('start-date').style.cssText="border:1px solid red";
-    alert("Select an appropriate date");
+    document.getElementById('date').style.cssText="border:1px solid red";
+    alert("select appropriate date");
    } 
    else {
     callGeoNameApi(place,date);
@@ -27,12 +28,13 @@ function isDateValid(date1)
 {
     let d = new Date();
     let date=new Date(date1);
-    if(date < d)
+    if(date<d)
     {
     return false;
     }
     return true;
-}
+} 
+
 function callGeoNameApi(place,date)
 {
     const baseUrl="http://api.geonames.org/geoCodeAddressJSON?q=";
@@ -70,7 +72,7 @@ const fetchLatLang = async (place,baseUrl,username)=>
     catch(error)
     {
         document.getElementById('city').style.cssText="border:1px solid red";
-        document.getElementById('nameerror').innerHTML="Sorry, try again!";
+       alert("Sorry, try again!");
     }  
 }
 

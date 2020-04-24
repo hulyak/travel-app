@@ -1,5 +1,4 @@
-import { updateInterface } from '../client/js/updateDataOnPage';
-
+const { updateInterface } = require("../updateDataOnPage");
 test('test date function', () => {
     let d=new Date();
     let todayDate=new Date('2020-04-11');

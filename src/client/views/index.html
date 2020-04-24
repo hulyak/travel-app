@@ -12,19 +12,25 @@
         <form class="form">
 
             <input id="city" type="text" placeholder="Where do you want to go?">
-            <label for="start-date">Date</label>
-            <input id="start-date" type="date" name="Date" >
+            <label for="date">Date</label>
+            <input id="date" type="date" name="date" >
+            <!-- <label for="end-date">To</label>
+            <input id="end-date" type="date" name="to" > -->
             <input id="submit" type="submit" value="Create Trip">
             <input id="reset" type="reset" value="Reset">
            </form>
 
     </div>
-    <span id="nameerror" class="error"></span>
-    <span id="dateerror" class="error"></span>
+    <!-- <span id="nameerror" class="error"></span>
+    <span id="dateerror" class="error"></span> -->
 <!-- List trips -->
 <section>
     <div class="trip">
         <!-- <button class="delete-btn" title="Delete this trip">X</button> -->
+        <div class="notrip">
+            <img id='notripi' alt="no trip image">
+            <h3>Create A Trip!!</h3>
+            </div>
         <div class="trip-data">
             <img id="mainimage">
             <h2 id="cityname"></h2>
