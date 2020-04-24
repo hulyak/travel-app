@@ -3,7 +3,6 @@ import {deleteTrip} from './formvalidator';
 export function updateInterface(getData,imageUrl)
 {
     const length=getData['length']-1;
-    const notrip=document.querySelector('.notrip');
     const mainImage=document.getElementById('mainimage');
     const cityName=document.getElementById('cityname');
     const temp=document.getElementById('temperature');
