@@ -1,22 +1,21 @@
 export function onCreate()
 {
-
-    const place=document.getElementById('city').value;
+    const place=document.getElementById('city').value.trim();
     const date=document.getElementById('start-date').value;
     if(place=='')
     {
         document.getElementById('city').style.cssText="border:1px solid red";
-        document.getElementById('nameerror').innerHTML="enter name";
+        alert("Please enter a place name");
     }
-    if(date=='')
+    if(date.length === 0)
     {
         document.getElementById('start-date').style.cssText="border:1px solid red";
-        document.getElementById('dateerror').innerHTML="select appropriate date";
+        alert("Please enter a date");
     }
    if(! isDateValid(date))
    {
     document.getElementById('start-date').style.cssText="border:1px solid red";
-    document.getElementById('dateerror').innerHTML="select appropriate date";
+    alert("Select an appropriate date");
    } 
    else {
     callGeoNameApi(place,date);
@@ -28,7 +27,7 @@ function isDateValid(date1)
 {
     let d = new Date();
     let date=new Date(date1);
-    if(date<d)
+    if(date < d)
     {
     return false;
     }
@@ -95,6 +94,24 @@ const postDataToServer=async(baseUrl='',data={})=>
         console.log("error:"+error);
     }
 }
+
+const deleteTrip = async (baseUrl = '', index) =>{
+    let dlt = confirm(`Delete this trip?`);
+    if(dlt === false) return;
+    try {
+        await fetch(baseUrl, {
+            method:"DELETE",
+            mode:"cors",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({id:index})
+        });
+        await updateUI();
+    }catch (e){
+        console.log(e);
+    }
+}
 //To fetch data from the weather api
 
 const getWeatherData=async(baseUrl,key,data,date)=>
@@ -151,3 +168,4 @@ const getPixaBayImages=async (url,key,getData)=>
 const submit=document.getElementById('submit');
 submit.addEventListener('click',onCreate);
 submit.addEventListener('onmousedown',onCreate);
+export {deleteTrip};

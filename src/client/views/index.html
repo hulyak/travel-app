@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traveler</title>
 </head>
@@ -10,13 +11,9 @@
     <div class="cover">
         <form class="form">
 
-            <input id="city" type="text" placeholder="Where do you want to go?" onfocus="Client.onInputFocus(this,'city')" onBlur="Client.onBlurInput(this,'city')">
-            <label class="error"></label>
-
+            <input id="city" type="text" placeholder="Where do you want to go?">
             <label for="start-date">Date</label>
-            <input id="start-date" type="date" name="Date"  onfocus="Client.onInputFocus(this,'start-date')" onBlur="Client.onBlurInput(this,'start-date')">
-            <label class="error"></label>
-
+            <input id="start-date" type="date" name="Date" >
             <input id="submit" type="submit" value="Create Trip">
             <input id="reset" type="reset" value="Reset">
            </form>
@@ -27,10 +24,7 @@
 <!-- List trips -->
 <section>
     <div class="trip">
-        <div class="notrip">
-            <img id='notripi' alt="no trip image">
-            <h3>Create your trips!</h3>
-            </div>
+        <button class="delete-btn" title="Delete this trip">X</button>
         <div class="trip-data">
             <img id="mainimage">
             <h2 id="cityname"></h2>
