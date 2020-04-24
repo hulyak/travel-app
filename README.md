@@ -10,6 +10,8 @@
 
 ## Project Summary
 
+![result](../client/media/result.PNG)
+
 This project builds out a travel app that obtains a desired trip location & departing date and returning date from the user, and displays weather and an image of the location using information obtained from external APIs. Project uses Webpack environment, an express server, and wrapped up with service workers.  If the trip is within a week, you will get the current weather forecast. If the trip is in the future, you will get a predicted forecast. The OpenWeather API is fantastic but it doesn’t let you get future data for free and it’s not that flexible with what information you enter; we are going to use the Weatherbit API for you to see how another API accomplishes the same goals. Weatherbit API has one problem, it only takes in coordinates for weather data -- it’s that specific. So, we’ll need to get those coordinates from the Geonames API. Once we have all of this data, we’ll want to display an image of the location entered; for this, we will be using the Pixabay API.
 
 ## File Structure
@@ -22,6 +24,7 @@ This project builds out a travel app that obtains a desired trip location & depa
   - `webpack.prod.js`
   - `.babel.rc`
   - `.gitignore`
+  - `.gitattributes`
   - src folder
     - server folder
       - `server.js` 
@@ -31,13 +34,17 @@ This project builds out a travel app that obtains a desired trip location & depa
       - html/views folder
         - `index.html`
       - js folder
-        - `app.js`
+        - `formvalidator.js`
+        - `updateDataOnPage.js`
       - styles folder
         - `form.scss`
         - `base.scss`
         - `resets.scss`
       - media folder
-        - `boats.webp`
+        - `notrip.webp`
+        - `result.PNG`
+      - test folder
+        - `update.spec.js`
 
 ## APIs used
  * [Geonames](http://www.geonames.org/export/web-services.html)
