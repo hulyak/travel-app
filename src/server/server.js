@@ -20,8 +20,8 @@ app.use(cors());
 app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'));
+    res.sendFile('dist/index.html')
+    // res.sendFile(path.resolve('src/client/views/index.html'));
 });
 
 /*create routes for post request of weather data*/
@@ -39,15 +39,11 @@ app.get('/getWeather', function (req, res) {
     res.send(postData1);
 });
 
+app.get('/test', function (req, res) {
+    res.send(mockAPIResponse);
+})
 ////   start server
 const port = 3000;
 const server = app.listen(port, () => {
     console.log(`running on localhost :${port} `);
 });
-const checkIfPort = num => {
-    return num === port;
-};
-
-module.exports = {
-    checkIfPort
-};

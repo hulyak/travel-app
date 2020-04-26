@@ -1,11 +1,16 @@
-const {
-    checkIfPort
-} = require("./server");
+const request = require('supertest');
+const app = require("./server");
 
-test("Check 4000", async () => {
-    await expect(checkIfPort(4000)).toBe(false);
+describe("Test path '/' ", () => {
+    test("It should response 200 Status code on GET request", async () => {
+        const response = await request(app).get("/");
+        expect(response.statusCode).toBe(200);
+    });
 });
 
-test("Check 3000", async () => {
-    await expect(checkIfPort(3000)).toBe(true);
+describe('Test path "/test" ', () => {
+    test("It should response 200 Status code on GET request", async () => {
+        const response = await request(app).get("/test");
+        expect(response.statusCode).toBe(200);
+    });
 });
