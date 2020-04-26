@@ -29,7 +29,9 @@ app.post('/weatherdata', function (req, res) {
     console.log(req.body);
     newEntry = {
         weather: req.body.weather,
-        date: req.body.dateT,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate,
+        dateInUnix: req.body.dateInUnix,
         cityname: req.body.cityname,
     };
     postData1.push(newEntry);

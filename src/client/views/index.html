@@ -12,8 +12,8 @@
         <form class="form">
 
             <input id="city" type="text" placeholder="Where do you want to go?">
-            <label for="date">Date</label>
-            <input id="date" type="date" name="date">
+            <label for="start-date">Date</label>
+            <input id="start-date" type="date" name="date">
             <label for="end-date">To</label>
             <input id="end-date" type="date" name="to">
             <input class="button" id="submit" type="submit" value="Create Trip">
@@ -35,6 +35,10 @@
                 <img id="mainimage">
                 <h2 id="cityname"></h2>
                 <h4 id="dateoftravel"></h4>
+                <p class="trip_length">You will travel for
+                    <span class="length"></span>
+                    <span class="ldays"></span>
+                </p>
                 <p id='min-temp'></p>
                 <p id='max-temp'></p>
                 <p id='desc'></p>

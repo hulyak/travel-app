@@ -1,17 +1,24 @@
+const {
+    calculateTime
+} = require("./calculateTime");
 export function onCreate() {
     event.preventDefault();
     const place = document.getElementById('city').value.trim();
-    const date = document.getElementById('date').value;
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const dateInUnix = new Date(startDate).getTime() / 1000;
+    const diff = calculateTime(startDate, endDate);
+    console.log(diff);
     if (place == '') {
         alert("Please enter a place name");
     }
-    if (date.length === 0) {
+    if (startDate.length === 0 || endDate.length === 0) {
         alert("Please enter a date");
     }
-    if (!isDateValid(date)) {
-        alert("select appropriate date");
+    if (diff === "error") {
+        alert('Travel Date cannot be before current time');
     } else {
-        callGeoNameApi(place, date);
+        callGeoNameApi(place);
     }
 }
 
@@ -24,17 +31,22 @@ function isDateValid(date1) {
     return true;
 }
 
-export function callGeoNameApi(place, date) {
+export function callGeoNameApi(place) {
     const baseUrl = "http://api.geonames.org/geoCodeAddressJSON?q=";
     const username = "hulya";
     fetchLatLang(place, baseUrl, username).then(function (data) {
         const baseUrl = "https://api.weatherbit.io/v2.0/forecast/daily?";
         const keyweatherapi = '04fa6da2d39e4f31b3d25b6d75ad1c84';
-
-        getWeatherData(baseUrl, keyweatherapi, data, date).then(function (wdata) {
+        const startDate = document.querySelector('#start-date');
+        const endDate = document.querySelector("#end-date");
+        const dateInUnix = new Date(startDate).getTime() / 1000;
+        const diff = calculateTime(start_date, end_date);
+        getWeatherData(baseUrl, keyweatherapi, data, startDate).then(function (wdata) {
             postDataToServer('http://localhost:3000/weatherdata', {
                 weather: wdata,
-                dateT: date,
+                startDate: startDate,
+                endDate: endDate,
+                diff,
                 cityname: place
             }).then(
                 function (serverData) {
@@ -101,7 +113,7 @@ export const postDataToServer = async (baseUrl = '', data = {}) => {
 // }
 //To fetch data from the weather api
 
-export const getWeatherData = async (baseUrl, key, data, date) => {
+export const getWeatherData = async (baseUrl, key, data, startDate) => {
     const response = await fetch(`${baseUrl}lat=${data['lat']}&lon=${data['lng']}&key=${key}`);
     try {
         const dataWeather = await response.json();
