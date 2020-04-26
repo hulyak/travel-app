@@ -1,5 +1,5 @@
-export function onCreate(e) {
-    e.preventDefault();
+export function onCreate() {
+    event.preventDefault();
     const place = document.getElementById('city').value.trim();
     const date = document.getElementById('date').value;
     if (place == '') {
@@ -67,6 +67,7 @@ export const fetchLatLang = async (place, baseUrl, username) => {
 export const postDataToServer = async (baseUrl = '', data = {}) => {
     const response = await fetch(baseUrl, {
         method: 'POST',
+        cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',

@@ -4,14 +4,17 @@ import './styles/base.scss';
 import './styles/form.scss';
 
 import notrip from './media/notrip.webp';
-import { onCreate } from './js/formvalidator'
-import { updateInterface } from './js/updateDataOnPage'; 
+import {
+    onCreate
+} from './js/formvalidator';
+import {
+    updateInterface
+} from './js/updateDataOnPage';
 
-export
-{
+export {
     onCreate,
     updateInterface
 }
 
-const notripimg=document.getElementById('notripi');
-notripimg.src=notrip;
+const notripimg = document.getElementById('notripi');
+notripimg.src = notrip;

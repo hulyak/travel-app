@@ -1,12 +1,16 @@
 # Travel Planner Front End Developer Capstone Project
 
 ## Table of Contents
-* [Project Summary](#project-summary)
-* [File Structure](#file_structure)
-* [API used](#api-used)
-* [How To Run This Project](#how-to-run-this-project)
-* [Offline Functionality](#offline_functionality)
-* [Testing](#testing)
+- [Travel Planner Front End Developer Capstone Project](#travel-planner-front-end-developer-capstone-project)
+  - [Table of Contents](#table-of-contents)
+  - [Project Summary](#project-summary)
+  - [File Structure](#file-structure)
+  - [APIs used](#apis-used)
+  - [How To Run This Project](#how-to-run-this-project)
+  - [Mock-up](#mock-up)
+  - [Offline Functionality](#offline-functionality)
+  - [Testing](#testing)
+  - [Rubric](#rubric)
 
 ## Project Summary
 
@@ -63,9 +67,16 @@ This project builds out a travel app that obtains a desired trip location & depa
     * use `npm start` on the terminal
     * This project is running on: http://localhost:3000/
 
+## Mock-up
+![travel-app-project-mockup](travel-app-project-mockup.png)
 
 ## Offline Functionality
 The project has service workers set up in webpack.
 
 ## Testing
 The project has Jest installed and can be run using `npm run test`
+
+## Rubric
+
+Project rubric can be found [here].
+[here](https://review.udacity.com/#!/rubrics/2669/view)

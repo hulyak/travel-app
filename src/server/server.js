@@ -23,12 +23,9 @@ app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
     res.sendFile(path.resolve('src/client/views/index.html'));
 });
-app.get('/getWeather', function (req, res) {
-    res.send(postData1);
-});
+
 /*create routes for post request of weather data*/
 app.post('/weatherdata', function (req, res) {
-
     console.log(req.body);
     newEntry = {
         weather: req.body.weather,
@@ -38,7 +35,9 @@ app.post('/weatherdata', function (req, res) {
     postData1.push(newEntry);
     res.send(postData1);
 });
-
+app.get('/getWeather', function (req, res) {
+    res.send(postData1);
+});
 
 ////   start server
 const port = 3000;
