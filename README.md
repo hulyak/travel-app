@@ -14,7 +14,7 @@
 
 ## Project Summary
 
-![result](../src/client/media/result.PNG)
+![result](./src/client/media/result.PNG)
 
 This project builds out a travel app that obtains a desired trip location & departing date and returning date from the user, and displays weather and an image of the location using information obtained from external APIs. Project uses Webpack environment, an express server, and wrapped up with service workers.  If the trip is within a week, you will get the current weather forecast. If the trip is in the future, you will get a predicted forecast. The OpenWeather API is fantastic but it doesn’t let you get future data for free and it’s not that flexible with what information you enter; we are going to use the Weatherbit API for you to see how another API accomplishes the same goals. Weatherbit API has one problem, it only takes in coordinates for weather data -- it’s that specific. So, we’ll need to get those coordinates from the Geonames API. Once we have all of this data, we’ll want to display an image of the location entered; for this, we will be using the Pixabay API.
 
@@ -69,7 +69,7 @@ This project builds out a travel app that obtains a desired trip location & depa
     * This project is running on: http://localhost:3000/
 
 ## Mock-up
-![travel-app-project-mockup](../src/client/media/travel-app-project-mockup.png)
+![travel-app-project-mockup](./src/client/media/travel-app-project-mockup.png)
 
 ## Offline Functionality
 The project has service workers set up in webpack.
