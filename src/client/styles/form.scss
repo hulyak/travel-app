@@ -1,29 +1,42 @@
-
 .trip {
     border-radius: 8px;
     padding: 20px;
     width: min-content;
     background-color: white;
     margin-bottom: 20px;
-    opacity:0;
-    top:0;
-    margin:1rem;
-  }
-  
+    opacity: 0;
+    top: 0;
+    margin: 1rem;
+}
+
 .form>*:not([type="date"]) {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 }
 
 .form input[type="submit"] {
-    background:#2376ae;
+    background: #2376ae;
     border-top: 1px solid #2376ae;
     border-bottom: 1px solid #2376ae;
     color: white;
 }
 
+.button:focus,
+.button:hover {
+    background-color: #2373be;
+    box-shadow: 0 0 0 0.1875rem white,
+        0 0 0 0.375rem #be9612;
+}
+
+.button:active {
+    background-color: #ad2cd4;
+    box-shadow: 0 0 0 0.1875rem #dd246b,
+        0 0 0 0.375rem #ea4c89;
+    transition-duration: 75ms;
+}
+
 .form input[type="reset"] {
-    background: #FF5A5F; 
+    background: #FF5A5F;
     border-top: 1px solid #FF5A5F;
     border-bottom: 1px solid #FF5A5F;
     color: white;
@@ -52,7 +65,7 @@
 
 .cover {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: flex-start;
 }
 
@@ -67,42 +80,42 @@ input[type="text"] {
     flex-basis: 25%;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     flex-basis: 10%;
 }
+
 input[type="reset"] {
     flex-basis: 10%;
 }
 
-#mainimage
-{
+#mainimage {
     display: none;
     width: 50%;
     margin: auto auto;
     height: 200px;
     border: 2px solid blue;
 }
-#cityname
-{
+
+#cityname {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     color: black;
 }
-#dateoftravel
-{
+
+#dateoftravel {
     text-align: center;
 }
-#min-temp
-{
+
+#min-temp {
     text-align: center;
 }
-#max-temp
-{
+
+#max-temp {
     text-align: center;
 }
-#desc
-{
+
+#desc {
     text-align: center;
 }
 
@@ -125,10 +138,9 @@ input[type="reset"] {
 
 // }
 
-.notrip
-{
-   display: block;
-   margin: auto auto;
-   text-align: center;
-   padding: 4rem;
+.notrip {
+    display: block;
+    margin: auto auto;
+    text-align: center;
+    padding: 4rem;
 }

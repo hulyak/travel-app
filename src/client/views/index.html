@@ -13,34 +13,34 @@
 
             <input id="city" type="text" placeholder="Where do you want to go?">
             <label for="date">Date</label>
-            <input id="date" type="date" name="date" >
+            <input id="date" type="date" name="date">
             <!-- <label for="end-date">To</label>
             <input id="end-date" type="date" name="to" > -->
-            <input id="submit" type="submit" value="Create Trip">
-            <input id="reset" type="reset" value="Reset">
-           </form>
+            <input class="button" id="submit" type="submit" value="Create Trip">
+            <input class="button" id="reset" type="reset" value="Reset">
+        </form>
 
     </div>
     <!-- <span id="nameerror" class="error"></span>
     <span id="dateerror" class="error"></span> -->
-<!-- List trips -->
-<section>
-    <div class="trip">
-        <!-- <button class="delete-btn" title="Delete this trip">X</button> -->
-        <div class="notrip">
-            <img id='notripi' alt="no trip image">
-            <h3>Create A Trip!!</h3>
+    <!-- List trips -->
+    <section>
+        <div class="trip">
+            <!-- <button class="delete-btn" title="Delete this trip">X</button> -->
+            <div class="notrip">
+                <img id='notripi' alt="no trip image">
+                <h3>Create A Trip!!</h3>
             </div>
-        <div class="trip-data">
-            <img id="mainimage">
-            <h2 id="cityname"></h2>
-            <h4 id="dateoftravel"></h4>
-            <p id='min-temp'></p>
-            <p id='max-temp'></p>
-            <p id='desc'></p>   
+            <div class="trip-data">
+                <img id="mainimage">
+                <h2 id="cityname"></h2>
+                <h4 id="dateoftravel"></h4>
+                <p id='min-temp'></p>
+                <p id='max-temp'></p>
+                <p id='desc'></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
