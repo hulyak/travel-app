@@ -3,15 +3,12 @@ export function onCreate(e) {
     const place = document.getElementById('city').value.trim();
     const date = document.getElementById('date').value;
     if (place == '') {
-        place.style.cssText = "border:1px solid red";
         alert("Please enter a place name");
     }
     if (date.length === 0) {
-        date.style.cssText = "border:1px solid red";
         alert("Please enter a date");
     }
     if (!isDateValid(date)) {
-        document.getElementById('date').style.cssText = "border:1px solid red";
         alert("select appropriate date");
     } else {
         callGeoNameApi(place, date);
