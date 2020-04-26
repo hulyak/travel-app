@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const postData1 = [];
 //add middleware to the server
-
 const bodyparser = require('body-parser');
 
 app.use(bodyparser.urlencoded({
@@ -16,6 +15,7 @@ app.use(bodyparser.json());
 const cors = require('cors');
 app.use(cors());
 
+const mockAPIResponse = require('./mockAPI');
 
 app.use(express.static('dist'))
 
@@ -49,3 +49,5 @@ const port = 3000;
 const server = app.listen(port, () => {
     console.log(`running on localhost :${port} `);
 });
+
+module.exports = app;
