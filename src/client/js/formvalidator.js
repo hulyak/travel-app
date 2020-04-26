@@ -1,6 +1,7 @@
 const {
     calculateTime
 } = require("./calculateTime");
+
 export function onCreate() {
     event.preventDefault();
     const place = document.getElementById('city').value.trim();

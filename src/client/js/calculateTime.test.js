@@ -1,6 +1,6 @@
 const {
     calculateTime
-} = require("../calculateTime");
+} = require("./calculateTime");
 
 test("Check 2020-04-10 2020-04-20", () => {
     expect(calculateTime("2020-04-10", "2020-04-20")).toBe(10);

@@ -11,6 +11,10 @@ import {
     updateInterface
 } from './js/updateDataOnPage';
 
+import {
+    calculateTime
+} from "./js/calculateTime";
+
 export {
     onCreate,
     updateInterface
