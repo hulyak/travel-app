@@ -23,14 +23,6 @@ export function onCreate() {
     }
 }
 
-function isDateValid(date1) {
-    let d = new Date();
-    let date = new Date(date1);
-    if (date < d) {
-        return false;
-    }
-    return true;
-}
 
 export function callGeoNameApi(place) {
     const baseUrl = "http://api.geonames.org/geoCodeAddressJSON?q=";
