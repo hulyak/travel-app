@@ -1,24 +1,13 @@
-//Import the sass files into index.js
-import './styles/resets.scss';
-import './styles/base.scss';
-import './styles/form.scss';
-
-import notrip from './media/notrip.webp';
-import {
-    onCreate
-} from './js/formvalidator';
-import {
-    updateInterface
-} from './js/updateDataOnPage';
-
+import "./styles/style.scss";
 import {
     calculateTime
 } from "./js/calculateTime";
+import {
+    formSubmitHandler
+} from "./js/app";
 
-export {
-    onCreate,
-    updateInterface
-}
+const saveBtn = document.getElementById("save-trip-btn");
 
-const notripimg = document.getElementById('notripi');
-notripimg.src = notrip;
+saveBtn.addEventListener("click", formSubmitHandler);
+
+export * from "./js/app";
