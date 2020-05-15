@@ -73,7 +73,7 @@ const fetchWeatherData = async (latitude = "", longitude = "") => {
         const data = await request.json();
 
         const forecast = {
-            summary: data.data[0].weather,
+            weather: data.data[0].weather,
             tempLow: data.data[0].low_temp,
             tempHigh: data.data[0].max_temp
         };
@@ -141,7 +141,7 @@ app.post("/fetchInfo", (req, res) => {
             coordinates.longitude,
             dateInUnix
         ).then(forecast => {
-            trip_info["weatherSummary"] = forecast.summary;
+            trip_info["weatherSummary"] = forecast.weather;
             trip_info["lowTemp"] = forecast.tempLow;
             trip_info["highTemp"] = forecast.tempHigh;
 
