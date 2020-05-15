@@ -60,12 +60,13 @@ const fetchCityCoordinates = async (cityName = "") => {
     }
 };
 // https://api.weatherbit.io/v2.0/forecast/daily?&lat=38.123&lon=-78.543&key=04fa6da2d39e4f31b3d25b6d75ad1c84
-const fetchWeatherData = async (latitude = "", longitude = "") => {
+const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
     const queryUrl =
         WEATHERBIT_BASE_URL +
         WEATHERBIT_API_KEY +
         latitude +
-        longitude;
+        longitude +
+        time;
 
     const request = await fetch(queryUrl);
 
@@ -73,9 +74,9 @@ const fetchWeatherData = async (latitude = "", longitude = "") => {
         const data = await request.json();
 
         const forecast = {
-            weather: data.data[0].weather,
-            tempLow: data.data[0].low_temp,
-            tempHigh: data.data[0].max_temp
+            summary: data.data.weather.description,
+            tempLow: data.data.low_temp,
+            tempHigh: data.data.max_temp
         };
 
         return forecast;
@@ -141,7 +142,7 @@ app.post("/fetchInfo", (req, res) => {
             coordinates.longitude,
             dateInUnix
         ).then(forecast => {
-            trip_info["weatherSummary"] = forecast.weather;
+            trip_info["weatherSummary"] = forecast.summary;
             trip_info["lowTemp"] = forecast.tempLow;
             trip_info["highTemp"] = forecast.tempHigh;
 
@@ -179,11 +180,3 @@ const port = 3000;
 const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`);
 });
-
-const checkIfPort = num => {
-    return num === port;
-};
-
-module.exports = {
-    checkIfPort
-};
