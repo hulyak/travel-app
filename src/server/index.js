@@ -11,7 +11,7 @@ const PIXABAY_API_KEY = "16060501-e2d3132e99ce2be48e2344f5f";
 
 ////////////////////// MAIN OBJECT TO STORE DATA
 
-const TRIPS_DATA = [];
+const TRIPS_DATA = {};
 
 ////////////////////// SERVER SETUP
 
@@ -111,7 +111,7 @@ const fetchCityImage = async (cityName = "") => {
 // GET route
 
 // home page
-app.get("/", (req, res) => res.sendFile("index.html"));
+app.get("/", (req, res) => res.sendFile(__dirname + '/index.html'));
 
 // all trips
 app.get("/trips", (request, response) => {
