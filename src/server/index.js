@@ -69,8 +69,8 @@ const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
         longitude +
 
         WEATHERBIT_API_KEY;
-        
-       
+
+
 
     const request = await fetch(queryUrl);
 
@@ -81,7 +81,7 @@ const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
             summary: data.data[0].weather.description,
             tempLow: data.data[0].low_temp,
             tempHigh: data.data[0].max_temp
-            
+
         };
 
         return forecast;
@@ -184,3 +184,10 @@ const port = 3000;
 const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`);
 });
+const checkIfPort = num => {
+    return num === port;
+};
+
+module.exports = {
+    checkIfPort
+};

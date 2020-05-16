@@ -34,7 +34,7 @@ nav a {
 }
 
 .intro-message {
-    max-width:100%;
+    max-width: 100%;
     color: white;
     font-size: 2em;
     margin-top: 10px;
@@ -58,4 +58,10 @@ nav a {
     column-gap: 30px;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+button:hover {
+    background: rgba(#bc658d, 0);
+    font-weight: 900;
+    letter-spacing: 1px;
 }
