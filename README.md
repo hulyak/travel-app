@@ -32,24 +32,25 @@ This project builds out a travel app that obtains a desired trip location & depa
   - `.gitattributes`
   - src folder
     - server folder
-      - `server.js` 
-      - `mockAPI.js`
-      - `server.test.js`
+      - `index.js` 
     - client folder
       - `index.js`
       - html/views folder
         - `index.html`
       - js folder
-        - `formvalidator.js`
-        - `updateDataOnPage.js`
-        - `app.test.js`
+        - `app.js`
+        - `calculateTime.js`
+        - `calculateTime.test.js`
+        - `createTripCard.js`
       - styles folder
         - `form.scss`
-        - `base.scss`
+        - `style.scss`
         - `resets.scss`
+        - `trip.scss`
       - media folder
-        - `notrip.webp`
-        - `result.PNG`
+        - `result-1.png`
+        - `result-2.png`
+        - `travel-app-project-mockup.png`
      
 
 ## APIs used
