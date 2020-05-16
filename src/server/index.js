@@ -74,9 +74,9 @@ const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
         const data = await request.json();
 
         const forecast = {
-            summary: data.data.weather.description,
-            tempLow: data.data.low_temp,
-            tempHigh: data.data.max_temp
+            summary: data.data[0].weather.description,
+            tempLow: data.data[0].low_temp,
+            tempHigh: data.data[0].max_temp
         };
 
         return forecast;
