@@ -1,5 +1,9 @@
-const { calculateTime } = require("./calculateTime");
-const { createTripCard } = require("./createTripCard");
+const {
+  calculateTime
+} = require("./calculateTime");
+const {
+  createTripCard
+} = require("./createTripCard");
 
 // UI elements
 const destination = document.getElementById("travel-destination");
@@ -22,13 +26,15 @@ const sendRequestToServer = async (
     end_date,
     date
   };
-  const response = await fetch("http://localhost:3000/fetchInfo", {
+  const response = await fetch("http://localhost:3030/fetchInfo", {
     method: "POST",
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ tripData })
+    body: JSON.stringify({
+      tripData
+    })
   });
 
   try {
@@ -74,4 +80,6 @@ const formSubmitHandler = () => {
   });
 };
 
-module.exports = { formSubmitHandler };
+module.exports = {
+  formSubmitHandler
+};

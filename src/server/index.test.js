@@ -2,10 +2,13 @@ const {
   checkIfPort
 } = require("./index");
 
-test("Check 4000", () => {
-  expect(checkIfPort(4000)).toBe(false);
-});
 
-test("Check 3030", () => {
-  expect(checkIfPort(3030)).toBe(true);
+describe("(checkIfPort) function", () => {
+  test("should be defined", async () => {
+    expect(checkIfPort).toBeDefined();
+  });
+  test("should be a function",
+    async () => {
+      expect(typeof checkIfPort).toBe("checkIfPort");
+    });
 });
