@@ -68,7 +68,7 @@ This project builds out a travel app that obtains a desired trip location & depa
     * use `npm run build-dev` on the terminal
 4. To start the server by 
     * use `npm start` on the terminal
-    * This project is running on: http://localhost:3000/
+    * This project is running on: http://localhost:3030/
 
 ## Mock-up
 ![travel-app-project-mockup](./src/client/media/travel-app-project-mockup.png)
