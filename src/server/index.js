@@ -3,8 +3,8 @@
 const GEONAMES_BASE_URL = "http://api.geonames.org/searchJSON?q=";
 const GEONAMES_USERNAME = "hulya";
 
-const WEATHERBIT_BASE_URL = "https://api.weatherbit.io/v2.0/forecast/daily?";
-const WEATHERBIT_API_KEY = "04fa6da2d39e4f31b3d25b6d75ad1c84";
+const WEATHERBIT_BASE_URL = "https://api.weatherbit.io/v2.0/forecast/daily?lat=";
+const WEATHERBIT_API_KEY = "&key=04fa6da2d39e4f31b3d25b6d75ad1c84";
 
 const PIXABAY_BASE_URL = "https://pixabay.com/api/?key=";
 const PIXABAY_API_KEY = "16060501-e2d3132e99ce2be48e2344f5f";
@@ -63,20 +63,25 @@ const fetchCityCoordinates = async (cityName = "") => {
 const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
     const queryUrl =
         WEATHERBIT_BASE_URL +
-        WEATHERBIT_API_KEY +
         latitude +
+        "&" +
+        "lon=" +
         longitude +
-        time;
+
+        WEATHERBIT_API_KEY;
+        
+       
 
     const request = await fetch(queryUrl);
 
     try {
         const data = await request.json();
-
+        console.log(data)
         const forecast = {
             summary: data.data[0].weather.description,
             tempLow: data.data[0].low_temp,
             tempHigh: data.data[0].max_temp
+            
         };
 
         return forecast;
@@ -148,8 +153,7 @@ app.post("/fetchInfo", (req, res) => {
 
             fetchCityImage(city).then(imageInfo => {
                 trip_info["cityImageUrl"] = imageInfo.imageUrl;
-
-                TRIPS_DATA.push(trip_info);
+                res.send(trip_info);
                 res.json(trip_info);
             });
         });
