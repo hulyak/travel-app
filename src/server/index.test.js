@@ -1,14 +1,9 @@
-const {
-  checkIfPort
-} = require("./index");
+const app = require('./index');
+const supertest = require('supertest');
+const request = supertest(app);
 
-
-describe("(checkIfPort) function", () => {
-  test("should be defined", async () => {
-    expect(checkIfPort).toBeDefined();
-  });
-  test("should be a function",
-    async () => {
-      expect(typeof checkIfPort).toBe("checkIfPort");
-    });
-});
+it('gets the home page', async done => {
+  const response = await request.get('/')
+  expect(response.status).toBe(200)
+  done();
+})
