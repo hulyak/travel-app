@@ -182,10 +182,6 @@ const port = 3030;
 const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`);
 });
-const checkIfPort = num => {
-    return num === port;
-};
 
-module.exports = {
-    checkIfPort
-};
+
+module.exports = server;
