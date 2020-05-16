@@ -17,17 +17,17 @@
     <form id="trip-form">
         <fieldset>
             <label for="travel-destination">Where do you want to travel to?</label>
-            <input type="text" id="travel-destination" placeholder="London" required />
+            <input type="text" id="travel-destination" placeholder="London" name="city" required />
         </fieldset>
 
         <fieldset>
             <label for="travel-start-date">When do you want to travel?</label>
-            <input type="date" id="travel-start-date" required />
+            <input type="date" id="travel-start-date" name="start-date" required />
         </fieldset>
 
         <fieldset>
             <label for="travel-end-date">When are you planning to return?</label>
-            <input type="date" id="travel-end-date" required />
+            <input type="date" id="travel-end-date" name="end-date" required />
         </fieldset>
 
         <button id="save-trip-btn" type="button">Save trip</button>
