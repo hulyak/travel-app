@@ -70,8 +70,6 @@ const fetchWeatherData = async (latitude = "", longitude = "", time = "") => {
 
         WEATHERBIT_API_KEY;
 
-
-
     const request = await fetch(queryUrl);
 
     try {
@@ -179,7 +177,7 @@ app.post("/fetchWeather", (req, res) => {
 
 ////////////////////// START SERVER
 
-const port = 3000;
+const port = 3030;
 /* Spin up the server*/
 const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`);
