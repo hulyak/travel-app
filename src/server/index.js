@@ -179,7 +179,7 @@ app.post("/fetchWeather", (req, res) => {
 
 const port = 3030;
 /* Spin up the server*/
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT || port, () => {
     console.log(`running on localhost: ${port}`);
 });
 
