@@ -35,7 +35,7 @@
     "node-fetch": "^2.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "request": "^2.88.2",
-    "webpack": "^4.42.1",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.11",
     "file-loader": "^6.0.0",
     "terser-webpack-plugin": "^2.3.5"
